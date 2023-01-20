@@ -180,8 +180,8 @@ function(R,
 
     if("add.risk" %in% methods){
         # TODO Add ES methods here
-        b = c(VaR(x,p=p,method="modified",invert=TRUE),VaR(x,p=p,method="historical",invert=TRUE))
-        b.labels = c(paste(p*100,"% ModVaR",sep=" "),paste(p*100,"% VaR",sep=""))
+        b = c(VaR(x,p=p,method="modified",invert=TRUE),CVaR(x,p=p,method="modified",invert=TRUE))
+        b.labels = c(paste(p*100,"% ModVaR",sep=" "),paste(p*100,"% ModCVaR",sep=""))
         rangedata = c(rangedata,b)
     }
 
