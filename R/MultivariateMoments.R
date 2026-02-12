@@ -208,7 +208,7 @@ CF_moments_RSM <- function(S_raw, K_raw) {
 }
 
 mES.MM <- function(w, mu, sigma, M3, M4, p) {
-  new_moments <- CF_moments_RSM(skewness.MM(w, sigma, M3), kurtosis.MM(w, sigma, M4))
+  new_moments <- CF_moments_RSM(S_raw = skewness.MM(w, sigma, M3), K_raw = kurtosis.MM(w, sigma, M4) - 3)
   skew <- new_moments$Sc # skewness.MM(w, sigma, M3) 
   exkurt <- new_moments$Kc # kurtosis.MM(w, sigma, M4) - 3
   z <- qnorm(1 - p)
