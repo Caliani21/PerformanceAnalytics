@@ -224,7 +224,7 @@ mES.MM <- function(w, mu, sigma, M3, M4, p) {
                      (h^6 - 9 * h^4 + 9 * h^2 + 3) * skew^2 / 72 +
                      (h^4 - 2 * h^2 - 1) * exkurt / 24) / (1 - p)
   
-  return( -multivariate_mean(w, mu) - StdDev.MM(w, sigma) * min(-E, h) )
+  return( -multivariate_mean(w, mu) + StdDev.MM(w, sigma) * E ) # return( -multivariate_mean(w, mu) - StdDev.MM(w, sigma) * min(-E, h) )
 }
 
 SR.mES.MM <- function(w, mu, sigma, M3, M4, p){
